@@ -21,11 +21,8 @@ function Login() {
       return;
     }
 
-    // Mock authentication - accepts any username/password
-    // In a real app, this would validate against a backend
     try {
       login(username, password, selectedRole);
-      // Redirect to saved articles after successful login
       navigate('/saved');
     } catch (err) {
       setError('Login failed. Please try again.');
@@ -72,6 +69,7 @@ function Login() {
             >
               <option value="regular">Regular User</option>
               <option value="premium">Premium User</option>
+              <option value="admin">Admin</option>
             </select>
           </div>
 
@@ -83,11 +81,11 @@ function Login() {
         <div className="demo-accounts">
           <p className="demo-title">Demo Accounts (for testing):</p>
           <p>Any username/password combination will work</p>
-          <p>Select "Regular" or "Premium" to test different access levels</p>
+          <p>Select "Regular", "Premium", or "Admin" to test different access levels</p>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Login;
